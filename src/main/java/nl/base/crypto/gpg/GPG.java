@@ -526,7 +526,7 @@ public class GPG {
 	 * @throws IOException
 	 */
 	public InputStream encrypt(byte[] bytes, String hexFingerPrint) throws IOException {
-		return runGPG(Arrays.asList("-r", hexFingerPrint, "--encrypt", "--output", "-"), bytes).getStdOut();
+		return runGPG(Arrays.asList("-r", hexFingerPrint, "-a", "--encrypt"), bytes).getStdOut();
 	}
 
 	/**
